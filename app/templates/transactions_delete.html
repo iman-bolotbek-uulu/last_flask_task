@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<table border="1">
+    <thead>
+        <h1 class="text-center">Вы действительно хотите удалить транзакцию?</h1>
+    </thead>
+    <tbody>
+        <form method="POST">
+            <h3 class="text-center">ID = {{ tran.id }}</h3>
+            <h3 class="text-center">Период транзакции = {{ tran.period }}</h3>
+            <h3 class="text-center">Сумма = {{ tran.value }}</h3>
+            <h3 class="text-center">Статус = {{ tran.status }}</h3>
+            <h3 class="text-center">Валюта = {{ tran.unit }}</h3>
+            <h3 class="text-center">Комментариев проводки = {{ tran.subject }}</h3>
+         <p class="text-center"><button type="submit" class="btn btn-danger" style="font-size:50px" >Удалить</button></p>
+        </form>
+    </tbody>
+</table>
+{% endblock content %}

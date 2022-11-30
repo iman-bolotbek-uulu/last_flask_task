@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<h1 style="font-family: 'Rubik Distressed', cursive;" class="text-center">{{title}}</h1>
+<form method="POST">
+    {% for field in form %}
+  <div class="form-group">
+      {% if field.widget.input_type != 'hidden'  %}
+      {{ field.label }}
+      {% endif %}
+      {{ field(class='form-control') }}
+      {% if field.errors %}
+         {% for error in field.errors %}
+      <div class="invalid-feedback" style="display: block;">
+                 {{ error }}
+      </div>
+         {% endfor %}
+      {% endif %}
+  </div>
+    {% endfor %}
+  <button type="submit" class="btn btn-primary">{{ save }}</button>
+</form>
+    </div>
+
+{% endblock content %}
