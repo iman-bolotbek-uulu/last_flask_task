@@ -30,7 +30,7 @@ def transactions_detail(id):
 
 @login_required
 def transactions_update(id):
-    title = "Добавить студента"
+    title = "Добавить транзакцию"
     save = 'Сохранить'
     student = models.Transactions.query.get(id)
     form = forms.TransactionsForm(request.form,obj=student)
